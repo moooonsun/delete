@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        main, section, article, div{
+            border: 2px solid rgb(210, 210, 210);
+        }
+        main{
+            max-width: 600px;
+            margin: 0;
+            background-color: aqua;
+            height: 1500px;
+        }
+        section{
+            margin: 20px;
+            background-color: aquamarine;
+        }
+        article{
+            margin: 20px;
+            background-color: antiquewhite;
+        }
+        div{
+            margin: 20px;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+        div.abs{
+            position: absolute;
+            background-color: bisque;
+            left: 20px;
+            top: 20px;
+        }
+        div.relative{
+            position: relative;
+        }
+        div.fixed{
+            position: fixed;
+            bottom: 50px;
+            left: 40px;
+        }
+        div.sticky{
+            position: sticky;
+            
+        }
+    </style>
+</head>
+<body>
+    <main>main
+        <section>section
+           <article>article
+                <div>
+                    div
+                </div>
+                <div class="abs">
+                    abs1
+                </div>
+                <div class="relative">relative
+                    <div class="abs">abs2</div>
+                </div>
+                <div class="fixed">fixed</div>
+                <div class="sticky">sticky</div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
