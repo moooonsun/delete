@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+        }
+        a:hover{
+            color: blue;
+            border: 1px solid #999;
+        }
+        a:focus{
+            color: red;
+        }
+        a:visited{
+            color: #999;
+        }
+        a:link{
+            color: green;
+        }
+        input{
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(240,240,240);    
+            font-size: 20px;
+           }
+        input:hover{
+            border-radius: 5px;
+            background-color: rgb(220,220,220);
+            
+        }
+        input:focus{
+            background-color: white;
+        }
+        label{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        label::before{
+            content: '*';
+            color: red;
+        }
+        label::after{
+            content: '!';
+            color: green;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="https://google.com">구글</a>
+    <a href="https://googleㅇㅁㄴ.com">이 사1</a>
+    <a href="https://googleㅁㄴㅇ.com">이 사2</a>
+    <label>입력창</label>
+    <input type="text" id="gd">
+</body>
+</html>

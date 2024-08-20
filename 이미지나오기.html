@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            background-color: white;
+            
+            margin-bottom: 20px;
+        }
+        input:hover{
+            background-color: rgb(223, 255, 150);
+        }
+        input:focus{
+            background-color: rgb(123, 255, 0);
+        }
+        .tnekf{
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            display: none;
+            margin-bottom: 20px;
+            background-image: url("img/44f9831be884e4c65f167b96e16fa94e.jpg")
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="button" value="이미지 만들기1" onclick="클릭('model_open1') "><br>
+    <div class="tnekf" id="model_open1"></div>
+    <input type="button" value="이미지 만들기2" onclick="클릭('model_open2') "><br>
+    <div class="tnekf" id="model_open2"></div>
+    <input type="button" value="이미지 만들기3" onclick="클릭('model_open3') "><br>
+    <div class="tnekf" id="model_open3"></div>
+    <script>
+        
+        function 클릭(click){
+            let model = document.getElementById(click);
+           
+            if(model.style.display=='block'){
+                model.style.display = 'none'
+                
+            }else {
+                model.style.display = 'block'
+                
+            }
+          
+            
+
+            
+          }
+          
+    </script>
+</body>
+</html>
