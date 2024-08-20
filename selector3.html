@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형식이</title>
+    <style>
+
+section> p+ul>li {
+            margin: 5px;
+            border: 2px solid blue;
+        }
+        section> p ~ ul{
+            border: 2px solid green;
+        }
+
+        section>ul>ul>li{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>P 테그 입니다.</p>
+    <ul>
+        <li>out1</li>
+    </ul>
+    <section>
+        <p>P 테그 입니다.</p>
+        <ul>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <ul>
+                <li>리스트3-1</li>
+                <li>리스트3-2</li>
+            </ul>
+            
+        </ul>
+    </section>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 테그명 그대로 css 대상으로 선택할 수 있다 */
+        a{
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+        h1{
+            margin-bottom: 100px;
+        }
+        .title_content{
+            width: 145px;
+            border: 2px dashed blue;
+            font-style: oblique;
+        }
+        #input_text{
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            background-color: rgb(240,240,240);
+        }
+        h1[class="www"]{
+            color: red;
+        }
+        h1[target]{
+            border: 1px solid bisque;
+        }
+        h1.ddd{
+            margin-left: 20px;
+        }
+        #id.class{
+            /* 이런식으로도 가능 */
+        }
+        a[href="https://www.naver.com/"]{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>제목 타이틀</h1>
+    <h1 class="www">제목1</h1>
+    <h1 class="ddd" target>제목2</h1>
+    
+    <h2 class="title_content">제목3 타이틀</h2>
+    <a href="https://www.naver.com/">네이버</a><br>
+    <a href="https://www.google.com/">구글</a>
+    <br>
+    id : <input type="text" id="input_text">
+</body>
+</html>
