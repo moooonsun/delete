@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="user_id" value="Hello World">
+    <input type="button"  value="클릭"  onclick="클릭()">
+
+    <script>
+   
+        let dd = document.getElementById('user_id');
+        console.log(dd);
+
+        //dd => string x
+        dd.value='공주';
+       
+        //이벤트 핸들러
+        function 클릭(){
+            alert(dd.value);
+        }
+    </script>
+</body>
+</html>

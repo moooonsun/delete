@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>좋아하는 국가는?</h1>
+    <input type="radio" name="nat">대한민국
+    <input type="radio" name="nat">일본
+    <input type="radio" name="nat">미국
+    <input type="radio" name="nat">아르헨티나<br>
+    <input type="button" value="선택" onclick="result()">
+
+    <script>
+        //getElementsByName은 배열로 리턴
+        let aa = document.getElementsByName('nat');
+        
+       
+        function result(){
+            for(let i =0; i < aa.length; i++){
+            if(aa[i].checked){
+                
+                alert(aa[i]);
+            }
+            }
+        }
+    </script>
+</body>
+</html>

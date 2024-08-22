@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="첫번째값">+<input type="text" id="두번째값">=<input type="text" id="결과값"><input type="button" value="더하기" onclick="더하기()">
+    <script>
+        
+        // input 창 3개. 첫번째값 두번째값 결과
+        let dd1= document.getElementById('첫번째값');
+        let dd2= document.getElementById('두번째값');
+        let dd3= document.getElementById('결과값');
+      
+        function 더하기(){
+            dd3.value = parseFloat(dd1.value) + parseFloat(dd2.value)
+        }
+
+        
+    </script>
+</body>
+</html>

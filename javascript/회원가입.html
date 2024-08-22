@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    table{
+            border-collapse: collapse;
+            width: 600px;
+            
+    }
+    form{
+        
+    }
+    tr td{
+            border: 1px solid rgb(177, 214, 255);
+            
+    }
+    td{
+        height: 30px;
+    }
+    .td1{
+        font-weight: bold;
+        text-align: center;
+        background-color: rgb(228, 228, 228);
+    }
+    .td2{ 
+        font-weight: bold;
+        text-align: center;
+        background-color: rgb(177, 214, 255);;
+    }
+    textarea{
+        width: 400px;
+        height: 90px;
+    }
+    .input1{
+        width: 200px;
+    }
+    .input2{
+        width: 90px;
+    }
+</style>
+<body>
+    <form>
+       <table>
+            <tr>
+                <td colspan="2" class="td2">회원 기본 정보</td>
+            </tr>
+            <tr>
+                <td class="td1">아이디:</td>
+                <td><input type="text" id="id" maxlength="12">
+                    4~12자의 영문 대소문자와 숫자로만 입력</td>
+            </tr>
+            <tr>
+                <td class="td1">비밀번호:</td>
+                <td><input type="password" id="password1" maxlength="12">
+                    4~12자의 영문 대소문자와 숫자로만 입력</td>
+            </tr>
+            <tr>
+                <td class="td1">비밀번호확인:</td>
+                <td><input type="password" id="password2" maxlength="12"></td>
+            </tr>
+            <tr>
+                <td class="td1">메일주소:</td>
+                <td><input type="email" class="input1" id="email">
+                    예) id@domain.com</td>
+            </tr>
+            <tr>
+                <td class="td1" >이름:</td>
+                <td><input type="text"id="name" class="input1"></td>
+            </tr>
+            <tr>
+                <td  colspan="2" class="td2">개인 신상 정보</td>
+            </tr>
+            <tr>
+                <td class="td1">주민등록번호:</td>
+                <td><input type="text" id="number"class="input1" maxlength="13">
+                    예) 1234561234567</td>
+            </tr>
+            <tr>
+                <td class="td1">생일:</td>
+                <td><input type="text" class="input2" id="year" maxlength="4">년
+                    <select id="month">
+                        <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                        <option >4</option>
+                        <option >5</option>
+                        <option >6</option>
+                        <option >7</option>
+                        <option >8</option>
+                        <option >9</option>
+                        <option >10</option>
+                        <option >11</option>
+                        <option >12</option>
+                    </select>월
+                    <select id="date">
+                        <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                        <option >4</option>
+                        <option >5</option>
+                        <option >6</option>
+                        <option >7</option>
+                        <option >8</option>
+                        <option >9</option>
+                        <option >10</option>
+                        <option >11</option>
+                        <option >12</option>
+                        <option >13</option>
+                        <option >14</option>
+                        <option >15</option>
+                        <option >16</option>
+                        <option >17</option>
+                        <option >18</option>
+                        <option >19</option>
+                        <option >20</option>
+                        <option >21</option>
+                        <option >22</option>
+                        <option >23</option>
+                        <option >24</option>
+                        <option >25</option>
+                        <option >26</option>
+                        <option >27</option>
+                        <option >28</option>
+                        <option >29</option>
+                        <option >30</option>
+                        <option >31</option>
+                    </select>일
+                </td>
+            </tr>
+            <tr>
+                <td class="td1">관심분야:</td>
+                <td>&nbsp;<input type="checkbox" name="check" value="컴퓨터">컴퓨터 
+                    <input type="checkbox" name="check" value="인터넷">인터넷
+                    <input type="checkbox" name="check" value="여행">여행
+                    <input type="checkbox" name="check" value="영화감상">영화감상
+                    <input type="checkbox" name="check" value="음악감상">음악감상
+                </td>
+            </tr>
+            <tr>
+                <td class="td1">자기소개:</td>
+                <td><textarea id="yi"></textarea></td>
+            </tr>
+            
+       </table><br>
+       <div style="display: flex; justify-content: center;" >
+       <input type="button" value="회원 가입" onclick="join()"><input type="reset" value="다시 입력" >
+        </div>
+    </form>
+    <script>
+       
+        function join(){
+           
+        let id = document.getElementById('id').value;
+        let password1 = document.getElementById('password1').value;
+        let password2 = document.getElementById('password2').value;
+        let email = document.getElementById('email').value;
+        let name = document.getElementById('name').value;
+        let number = document.getElementById('number').value;
+        let year = document.getElementById('year').value;
+        let month = document.getElementById('month').value;
+        let date = document.getElementById('date').value;
+        let check = document.getElementsByName('check');
+        let yi = document.getElementById('yi').value;
+        let nullCheck = 0;
+
+       
+        if(id.length < 4 || !/^[a-zA-Z0-9]+$/.test(id)){
+            alert("4~12자의 영문 대소문자와 숫자로만 입력하세요");
+            document.getElementById('id').value = "";
+            document.getElementById('id').focus();
+            return;
+        }
+        if(password1.length < 4 || !/^[a-zA-Z0-9]+$/.test(password1)){
+            alert("4~12자의 영문 대소문자와 숫자로만 입력하세요");
+            document.getElementById('password1').value = "";
+            document.getElementById('password1').focus();
+            return;
+        }
+        if(password1 != password2){
+            alert("비밀번호가 동일하지 않습니다");
+            document.getElementById('password2').value = "";
+            document.getElementById('password2').focus();
+            return;
+        }
+        if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)){
+            alert("유효한 이메일 주소를 입력하세요.");
+            document.getElementById('email').value = "";
+            document.getElementById('email').focus();
+            return;
+        }
+        if(!/^\d{6}[1-4]\d{6}$/.test(number)){
+            alert("유효한 주민등록번호를 입력하세요.");
+            document.getElementById('number').value = "";
+            document.getElementById('number').focus();
+            return;
+        }
+        if(yi.length < 1){
+            alert("자기소개를 적어주세요");
+            document.getElementById('yi').value = "";
+            document.getElementById('yi').focus();
+            return;
+        }
+        
+        if(Number(year) > new Date().getFullYear() || Number(year) < (new Date().getFullYear() - 100)){
+            alert("생년월일을 정확하게 입력하세요.");
+            document.getElementById('year').value = "";
+            document.getElementById('year').focus();
+            return;
+        }
+       
+        console.log(id);
+        console.log(password1);
+        console.log(email);
+        console.log(name);
+        console.log(number);
+        console.log(year);
+        console.log(month);
+        console.log(date);
+        console.log(yi);
+
+        for(let i = 0; i < check.length; i++){
+            if(check[i].checked){
+                nullCheck++
+                console.log(check[i].value);
+                
+            }
+        }
+        if(nullCheck == 0){
+                alert('관심분야를 선택해주세요.');
+                return;
+            }
+        }
+        
+       
+
+    </script>
+</body>
+</html>

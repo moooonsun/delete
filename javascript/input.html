@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="user_id">
+
+    <script>
+        // javasrcipt의 변수 타입
+        // var, let, const // 데이터 타입 x
+        //변수타입 변수명 = 값
+        var v1 = 'banana';
+        console.log(v1); 
+
+        let le1 = 'banana';
+        //let le1 = 'apple'; //let은 재선언을 방지해준다
+        var v1 = 'apple';
+
+        const con1 = '상수';
+      
+        console.log(con1);
+
+        //null, undefined.
+        //null: 값이 없다
+        //undefined: 값이 할당 되지 않은 상태
+        let yy;
+        console.log(yy);
+      //  let dd = document.getElementById('user_id1').value;
+      //  console.log(dd);
+      //  if(dd == 'undefined' || dd == null){}
+
+        //
+        let str = 'abc';
+        typeof(str); // 데이터 타입을 알려주는 친구.
+        console.log('1','2');
+        console.log(typeof(str),str);
+
+        //데이터 타입 변환
+        let num = 100+'';
+        console.log(typeof(num),num);
+
+        //number(): 숫자 인식
+        console.log(typeof(Number('1.2')), Number('1.2'));
+
+        //parseInt(): 숫자인식(정수)
+        console.log(typeof(parseInt('1.2')),parseInt('1.2'));
+
+        //parseFloat(): 숫자인식(소수점 나옴)
+        console.log(typeof(parseFloat('1.2')),parseFloat('1.2'));
+
+        //string():문자로 인식
+        console.log(typeof(String(100)),String(100));
+
+        //boolean 논리(true, false)
+        console.log(typeof(Boolean('true')),Boolean('true'))
+        // console, f12 개발자도구에서 log
+    </script>
+</body>
+</html>
