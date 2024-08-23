@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 이동 예제</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            border: 3px solid black;
+            background-color: deepskyblue;
+            left: 300px;
+            bottom: 300px; 
+            transition: width 2s, height 2s, bottom 0.3s, left 0.3s; 
+        }
+        .wid {
+            width: 80vh;
+        }
+        .hei {
+            height: 500px;
+        }
+        .backcolor{
+            background-color: aquamarine;
+        }
+       
+    </style>
+</head>
+<body>
+    <input type="button" id="btn1" value="너비 늘리기">
+    <input type="button" id="btn2" value="높이 늘리기">
+    <input type="button" id="btn3" value="배경색 바꾸기">
+    <input type="button" id="btn5" value="상">
+    <input type="button" id="btn6" value="좌">
+    <input type="button" id="btn7" value="우">
+    <input type="button" id="btn8" value="하">
+    <div class="box"></div>
+    <script>
+        // 클래스 추가, 제거, 존재 여부 확인 예제
+        // element.classList.add('클래스명');
+        // element.classList.remove('클래스명');
+        // element.classList.contains('클래스명');
+
+        document.getElementById('btn1').addEventListener('click', wid);
+        document.getElementById('btn2').addEventListener('click', hei);
+        document.getElementById('btn3').addEventListener('click', backcolor);
+        let bottom = 300; 
+
+        let left = 300; 
+
+
+        document.getElementById('btn8').addEventListener('click', ()=>{
+            bottom -= 50; // 
+            document.querySelector(".box").style.bottom = bottom + "px";
+        });
+        document.getElementById('btn5').addEventListener('click', ()=>{
+            bottom += 50; // 
+            document.querySelector(".box").style.bottom = bottom + "px";
+        });
+        document.getElementById('btn6').addEventListener('click', ()=>{
+            left -= 50; // 
+            document.querySelector(".box").style.left = left + "px";
+        });
+        document.getElementById('btn7').addEventListener('click', ()=>{
+            left+= 50; // 
+            document.querySelector(".box").style.left = left + "px";
+        });
+
+        function wid(){
+            let box = document.querySelector('.box');
+            if(box.classList.contains('wid')){
+                box.classList.remove('wid');
+            } else {
+                box.classList.add('wid');
+            }
+        }
+
+        function hei(){
+            let box = document.querySelector('.box');
+            if(box.classList.contains('hei')){
+                box.classList.remove('hei');
+            } else {
+                box.classList.add('hei');
+            }
+        }
+        function backcolor(){
+            let box = document.querySelector('.box');
+            if(box.classList.contains('backcolor')){
+                box.classList.remove('backcolor');
+            } else {
+                box.classList.add('backcolor');
+            }
+        }
+    </script>
+</body>
+</html>
