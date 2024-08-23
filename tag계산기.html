@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="첫 번째 수">
+    <select>
+        <option value="+">+</option>
+        <option value="-">-</option>
+    </select>
+    <input type="text" placeholder="두 번째 수">
+    <input type="button" value="계산" onclick="result()">
+    <input type="text" placeholder="결과 출력">
+    <script>
+        
+        function result(){
+            let num = document.getElementsByTagName('input');
+            let sel = document.getElementsByTagName('select');
+            switch (sel[0].value){
+                case "+":
+                num[3].value= Number(num[0].value)+Number(num[1].value);
+                    break;
+                    case "-":
+                num[3].value= Number(num[0].value)-Number(num[1].value);
+                    break;
+            }
+                
+            
+        }
+    </script>
+</body>
+</html>
