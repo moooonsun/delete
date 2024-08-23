@@ -14,17 +14,24 @@
     <input type="text" placeholder="두 번째 수">
     <input type="button" value="계산" onclick="result()">
     <input type="text" placeholder="결과 출력">
+    <!-- 결과 입력 -->
+     <span id="gd"></span>
     <script>
         
         function result(){
             let num = document.getElementsByTagName('input');
             let sel = document.getElementsByTagName('select');
+
+            let  gd = document.getElementById('gd');
+
+
+
             switch (sel[0].value){
                 case "+":
-                num[3].value= Number(num[0].value)+Number(num[1].value);
+                gd.innerText  =Number(num[0].value)+Number(num[1].value);
                     break;
                     case "-":
-                num[3].value= Number(num[0].value)-Number(num[1].value);
+                    gd.innerText= Number(num[0].value)-Number(num[1].value);
                     break;
             }
                 
