@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="menu01" onchange="box()">
+        <option value="coffee">커피</option>
+        <option value="cake">케이크</option>
+    </select>
+    <select id="menu02">
+
+    </select>
+    <script>
+        box()
+        function box(){
+            let menu01 = document.getElementById('menu01').value;
+            let menu02 = document.getElementById('menu02');
+
+            switch(menu01){
+                case "coffee":
+                menu02.innerHTML = '<option>카페라떼</option> <option>바닐라라떼</option>'
+                break;
+                  case "cake":
+                menu02.innerHTML = '<option>생크림케이크</option> <option>초코 케이크</option>'
+                break;
+            }
+        }
+
+      
+    </script>
+</body>
+</html>
