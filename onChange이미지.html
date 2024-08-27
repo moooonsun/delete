@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <select id="menu01" onchange="box()">
         <option value="coffee">커피</option>
         <option value="cake">케이크</option>
+        <option value="cookie">쿠키</option>
     </select>
-    <select id="menu02">
+    <div id="menu02">
 
-    </select>
+    </div>
     <script>
         box();
         function box(){
-            let menu01 = document.getElementById('menu01').value;
-            let menu02 = document.getElementById('menu02');
+            let menu01 = document.querySelector('select').value;
+            let menu02 = document.querySelector('div');
 
             switch(menu01){
                 case "coffee":
-                menu02.innerHTML = '<option>카페라떼</option> <option>바닐라라떼</option>'
+                menu02.innerHTML = '<img src="img/aaaa.jpg">'
                 break;
                   case "cake":
-                menu02.innerHTML = '<option>생크림케이크</option> <option>초코 케이크</option>'
+                menu02.innerHTML = '<img src="img/44f9831be884e4c65f167b96e16fa94e.jpg">'
+                break;
+                case "cookie":
+                menu02.innerHTML = '<img src="img/aaaa.jpg">'
                 break;
             }
         }
