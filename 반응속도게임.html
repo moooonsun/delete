@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Game</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        body {
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            width: 600px;
+            height: 600px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        .clock {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div id="divClock" class="clock">시작하려면 클릭</div>
+        <input type="button" id="actionButton" value="Start" onclick="toggleGame()">
+        <input type="button" id="restartButton" value="Restart" onclick="restartGame()">
+    </form>
+
+    <script>
+        let start;
+        let timeoutId;
+        let gameStarted = false;
+        let preparing = false;
+
+        function toggleGame() {
+            if (preparing) {
+                showError();
+            } else if (gameStarted) {
+                stopGame();
+            } else {
+                startGame();
+            }
+        }
+
+        function showError() {
+            document.getElementById('divClock').innerHTML = '너무 빨라요!';
+            document.querySelector('body').style.backgroundColor = 'skyblue';
+            document.getElementById('actionButton').style.display = 'none';
+            clearTimeout(timeoutId);
+            preparing = false;
+            gameStarted = false;
+        }
+
+        function startGame() {
+            preparing = true;
+            document.getElementById('divClock').innerHTML = '준비';
+            document.querySelector('body').style.backgroundColor = 'green';
+            
+            document.getElementById('actionButton').value = 'Stop';
+
+            let randomDelay = Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000;
+
+            timeoutId = setTimeout(() => {
+                if (!preparing) return;
+                document.querySelector('body').style.backgroundColor = 'red';
+                start = new Date();
+                document.getElementById('divClock').innerHTML = '멈춰!';
+                document.getElementById('actionButton').value = 'Stop';
+                gameStarted = true;
+                preparing = false;
+            }, randomDelay);
+        }
+
+        function stopGame() {
+            clearTimeout(timeoutId);
+            let crrDate = new Date();
+            let elapsedTime = crrDate - start; 
+            document.getElementById('divClock').innerHTML = '반응 시간:'+elapsedTime+'ms';
+            document.querySelector('body').style.backgroundColor = 'skyblue';
+            document.getElementById('actionButton').value = 'Start';
+            gameStarted = false;
+        }
+
+        function restartGame() {
+            if (gameStarted) {
+                stopGame();
+            }
+            document.getElementById('divClock').innerHTML = '시작하려면 클릭';
+            document.querySelector('body').style.backgroundColor = 'skyblue';
+            document.getElementById('actionButton').value = 'Start';
+            document.getElementById('actionButton').style.display = 'inline';
+            gameStarted = false;
+            preparing = false;
+        }
+    </script>
+</body>
+</html>

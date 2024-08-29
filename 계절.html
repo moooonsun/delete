@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/lib/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <h1>좋아하는 계절</h1>
+    <input type="radio" name="season" value="spring" id="">봄
+    <input type="radio" name="season" value="summer" id="">여름
+    <input type="radio" name="season" value="fail" id="">가을
+    <input type="radio" name="season" value="winter" id="">겨울
+    <input type="button" value="전송1" onclick="send1()">
+    <input type="button" value="전송2" onclick="send2()">
+    <input type="button" value="전송3" onclick="send3()">
+    
+    <script>
+        // jquery 방법 easy
+        function send2(){
+            let radio = $('input[name="season"]');//선택자가 name을 따로 불러오는 방법이 없기 때문에
+            //name은 테그를 통해서 불러옵니다
+            //위의 방법이 싫다 그러면 class임시로 지정
+            //$('.inputRadio') => inputRadio라는 class 가진 모든 것 불러오기
+
+            //무엇이 선택 되었는지 확인하고 싶습니다
+            for(let i=0; i< radio.length; i++){
+                //선택 값을 확인하고 싶습니다
+                if(radio[i].checked == true) {
+
+                }
+            }
+        }
+        function send3(){
+            let result = $('input[name="season"]:checked').val();
+            console.log(result);
+        }
+    </script>
+</body>
+
+</html>

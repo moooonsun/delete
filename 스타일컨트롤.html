@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컨트롤하기</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #result {
+            display: inline-block;
+        }
+
+        .strikethrough {
+            text-decoration: line-through;
+        }
+
+        .increase-size {
+            font-size: 1.5em;
+        }
+
+        .decrease-size {
+            font-size: 0.75em;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .subscript {
+            vertical-align: sub;
+            font-size: 0.75em;
+        }
+
+        .superscript {
+            vertical-align: super;
+            font-size: 0.75em;
+        }
+
+        .lowercase {
+            text-transform: lowercase;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <table border="0" cellpadding="3" cellspacing="0">
+        <tr>
+            <td>
+                <input type="text" id="tbString">
+                <input type="button" value="미리 보기">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                색상: <select id="fontColor">
+                    <option value="red">빨강</option>
+                    <option value="green">초록</option>
+                    <option value="blue">파랑</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                크기: <select id="fontSize">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="fontOptions" value="1">취소선
+                <input type="checkbox" name="fontOptions" value="2">크게
+                <input type="checkbox" name="fontOptions" value="3">작게
+                <input type="checkbox" name="fontOptions" value="4">두껍게
+                <input type="checkbox" name="fontOptions" value="5">기울임
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="fontOptions" value="6">위첨자
+                <input type="checkbox" name="fontOptions" value="7">아래첨자
+                <input type="checkbox" name="fontOptions" value="8">소문자로
+                <input type="checkbox" name="fontOptions" value="9">대문자로
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span id="result"></span>
+            </td>
+        </tr>
+    </table>
+    <script>
+        $('input[type="button"]').on('click', function () {
+            let result = $('#result');
+            let tbString = $('#tbString').val();
+            let fontSize = $('#fontSize').val() + "em";
+            let fontColor = $('#fontColor').val();
+            let checkedOptions = $('input[name="fontOptions"]:checked');
+            
+            
+            result.text(tbString);
+            result.css('color', fontColor);
+            result.css('fontSize', fontSize);
+            
+            
+            result.removeClass('strikethrough increase-size decrease-size bold italic subscript superscript lowercase uppercase');
+
+         
+                switch (checkedOptions.val()) {
+                    case '1':
+                        result.addClass('strikethrough');
+                        break;
+                    case '2':
+                        result.addClass('increase-size');
+                        break;
+                    case '3':
+                        result.addClass('decrease-size');
+                        break;
+                    case '4':
+                        result.addClass('bold');
+                        break;
+                    case '5':
+                        result.addClass('italic');
+                        break;
+                    case '6':
+                        result.addClass('subscript');
+                        break;
+                    case '7':
+                        result.addClass('superscript');
+                        break;
+                    case '8':
+                        result.addClass('lowercase');
+                        break;
+                    case '9':
+                        result.addClass('uppercase');
+                        break;
+                }
+            
+        });
+    </script>
+</body>
+</html>
